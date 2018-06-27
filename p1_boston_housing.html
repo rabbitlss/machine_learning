@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>boston_housing</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>p1_boston_housing</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -12477,7 +12477,7 @@ PTRATIO值越大，说明一个老师负责的学生相对越多，师资力量�
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="&#38382;&#39064;-8---&#22238;&#31572;&#65306;">&#38382;&#39064; 8 - &#22238;&#31572;&#65306;<a class="anchor-link" href="#&#38382;&#39064;-8---&#22238;&#31572;&#65306;">&#182;</a></h3><p>1.K折交叉验证法是把测试样本数据集平均分为K份，训练模型K次，每次把其中一份数据作为验证集，其他K-1份数据作为训练集，最后把K次验证的结果取平均值，最后用测试集来测试模型是否好。
+<h3 id="&#38382;&#39064;-8---&#22238;&#31572;&#65306;">&#38382;&#39064; 8 - &#22238;&#31572;&#65306;<a class="anchor-link" href="#&#38382;&#39064;-8---&#22238;&#31572;&#65306;">&#182;</a></h3><p>1.K折交叉验证法是把训练样本数据集平均分为K份，训练模型K次，每次把其中一份数据作为验证集，其他K-1份数据作为训练集，最后把K次验证的结果取平均值，最后用测试集来测试模型是否好。
 2.GridSearchCV中，把模型多个超参数列表作为参数整体传入，针对不同的参数组合用传入的K个训练集进行训练K次，验证K次，最后把K次验证的结果取平均值，得到结果最好的参数值组合。
 3.cv<em>results</em> 属性按照参数值组合的不同，存在cv<em>results</em>['params']，并且存有交叉验证K轮的每一轮验证结果，'split0_test_score'作为第一轮验证结果，'split1_test_score'作为第二轮验证结果。。。'mean_test_score'作为每一轮结果平均值，'std_test_score'作为每一轮结果标准方差，还有最终基于平均值（'mean_test_score'）的排序结果cv<em>results</em>['rank_test_score']
 4.网格搜索有多个参数值组合，如果对于每一个参数值组合都简单的用同一份训练数据和同一份测试数据，可能会因为测试次数过少很难找出每个组合的优劣。用K折交叉验证法可以保证评估结果的稳定性和保真性，以选出最优的参数值组合的模型。</p>
