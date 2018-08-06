@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>finding_donors</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>p2_finding_donors</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11813,7 +11813,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 为这个项目导入需要的库</span>
@@ -11999,7 +11999,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[195]:</div>
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TODO：总的记录数</span>
@@ -12060,7 +12060,7 @@ Percentage of individuals making more than $50,000: 24.78%
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[148]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 将数据切分成特征和对应的标签</span>
@@ -12085,7 +12085,7 @@ Percentage of individuals making more than $50,000: 24.78%
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[152]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 可视化 &#39;capital-gain&#39;和&#39;capital-loss&#39; 两个特征</span>
@@ -12131,7 +12131,7 @@ Percentage of individuals making more than $50,000: 24.78%
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[161]:</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 对于倾斜的数据使用Log转换</span>
@@ -12181,7 +12181,7 @@ Percentage of individuals making more than $50,000: 24.78%
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[162]:</div>
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="k">import</span> <span class="n">MinMaxScaler</span>
@@ -12323,7 +12323,7 @@ Percentage of individuals making more than $50,000: 24.78%
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[193]:</div>
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TODO：使用pandas.get_dummies()对&#39;features_raw&#39;数据进行独热编码</span>
@@ -12376,7 +12376,7 @@ Percentage of individuals making more than $50,000: 24.78%
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[194]:</div>
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 导入 train_test_split</span>
@@ -12420,6 +12420,51 @@ Testing set has 9045 samples.
 </div>
 
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#不能使用scikit-learn，你需要根据公式自己实现相关计算。</span>
+<span class="c1"># TODO：总的记录数</span>
+<span class="n">n_records_val</span> <span class="o">=</span> <span class="n">y_val</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># TODO：被调查者的收入大于$50,000的人数</span>
+<span class="c1">#n_greater_50k_val = X_val[X_val[&#39;income&#39;].str.startswith(&#39;&gt;50K&#39;)].shape[0]</span>
+
+<span class="c1">#X_val[&#39;income&#39;]</span>
+
+<span class="c1"># TODO：被调查者的收入最多为$50,000的人数</span>
+<span class="c1">#n_at_most_50k_val = X_val[X_val[&#39;income&#39;].str.startswith(&#39;&lt;=50K&#39;)].shape[0]</span>
+<span class="n">n_records_val</span>
+<span class="n">y_val</span><span class="p">[</span><span class="n">y_val</span><span class="o">==</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[42]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>1793</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -12453,19 +12498,28 @@ Testing set has 9045 samples.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[226]:</div>
+<div class="prompt input_prompt">In&nbsp;[43]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#不能使用scikit-learn，你需要根据公式自己实现相关计算。</span>
+<span class="c1"># TODO：总的记录数</span>
+<span class="n">n_records_val</span> <span class="o">=</span> <span class="n">y_val</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># TODO：被调查者的收入大于$50,000的人数</span>
+<span class="n">n_greater_50k_val</span> <span class="o">=</span> <span class="n">y_val</span><span class="p">[</span><span class="n">y_val</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># TODO：被调查者的收入最多为$50,000的人数</span>
+<span class="n">n_at_most_50k_val</span> <span class="o">=</span> <span class="n">y_val</span><span class="p">[</span><span class="n">y_val</span><span class="o">==</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
 
 <span class="c1">#TODO： 计算准确率</span>
-<span class="n">accuracy</span> <span class="o">=</span> <span class="p">(</span><span class="n">n_greater_50k</span> <span class="o">/</span> <span class="p">(</span><span class="n">n_at_most_50k</span><span class="o">+</span><span class="n">n_greater_50k</span><span class="p">))</span>
+<span class="n">accuracy</span> <span class="o">=</span> <span class="p">(</span><span class="n">n_greater_50k_val</span> <span class="o">/</span> <span class="p">(</span><span class="n">n_at_most_50k_val</span><span class="o">+</span><span class="n">n_greater_50k_val</span><span class="p">))</span>
 
 <span class="c1"># TODO： 计算查准率 Precision</span>
-<span class="n">precision</span> <span class="o">=</span> <span class="p">(</span><span class="n">n_greater_50k</span> <span class="o">/</span> <span class="p">(</span><span class="n">n_at_most_50k</span><span class="o">+</span><span class="n">n_greater_50k</span><span class="p">))</span>
+<span class="n">precision</span> <span class="o">=</span> <span class="p">(</span><span class="n">n_greater_50k_val</span> <span class="o">/</span> <span class="p">(</span><span class="n">n_at_most_50k_val</span><span class="o">+</span><span class="n">n_greater_50k_val</span><span class="p">))</span>
 
 <span class="c1"># TODO： 计算查全率 Recall</span>
-<span class="n">recall</span> <span class="o">=</span> <span class="n">n_greater_50k</span><span class="o">/</span><span class="n">n_greater_50k</span>
+<span class="n">recall</span> <span class="o">=</span> <span class="n">n_greater_50k_val</span><span class="o">/</span><span class="n">n_greater_50k_val</span>
 
 <span class="c1"># TODO： 使用上面的公式，设置beta=0.5，计算F-score</span>
 <span class="n">fscore</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mf">0.25</span><span class="p">)</span><span class="o">*</span><span class="n">precision</span><span class="o">*</span><span class="n">recall</span><span class="o">/</span><span class="p">(</span><span class="mf">0.25</span><span class="o">*</span><span class="n">precision</span><span class="o">+</span><span class="n">recall</span><span class="p">)</span>
@@ -12493,10 +12547,10 @@ Testing set has 9045 samples.
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Naive Predictor on validation data: 
-     Accuracy score: 0.2478 
-     Precision: 0.2478 
+     Accuracy score: 0.7522 
+     Precision: 0.7522 
      Recall: 1.0000 
-     F-score: 0.2917
+     F-score: 0.7914
 </pre>
 </div>
 </div>
@@ -12598,7 +12652,7 @@ Testing set has 9045 samples.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[228]:</div>
+<div class="prompt input_prompt">In&nbsp;[52]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TODO：从sklearn中导入两个评价指标 - fbeta_score和accuracy_score</span>
@@ -12682,7 +12736,7 @@ Testing set has 9045 samples.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[230]:</div>
+<div class="prompt input_prompt">In&nbsp;[54]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TODO：从sklearn中导入三个监督学习模型</span>
@@ -12693,7 +12747,7 @@ Testing set has 9045 samples.
 <span class="c1"># TODO：初始化三个模型</span>
 <span class="n">clf_A</span> <span class="o">=</span> <span class="n">svm</span><span class="o">.</span><span class="n">SVC</span><span class="p">()</span>
 <span class="n">clf_B</span> <span class="o">=</span> <span class="n">GaussianNB</span><span class="p">()</span>
-<span class="n">clf_C</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span>
+<span class="n">clf_C</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">43</span><span class="p">)</span>
 
 <span class="c1"># TODO：计算1%， 10%， 100%的训练数据分别对应多少点</span>
 <span class="n">samples_1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">y_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mf">0.01</span><span class="p">)</span>
@@ -12705,11 +12759,11 @@ Testing set has 9045 samples.
 <span class="k">for</span> <span class="n">clf</span> <span class="ow">in</span> <span class="p">[</span><span class="n">clf_A</span><span class="p">,</span> <span class="n">clf_B</span><span class="p">,</span> <span class="n">clf_C</span><span class="p">]:</span>
     <span class="n">clf_name</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span>
     <span class="n">results</span><span class="p">[</span><span class="n">clf_name</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="c1">#    for i, samples in enumerate([samples_1, samples_10, samples_100]):</span>
-<span class="c1">#        results[clf_name][i] = train_predict(clf, samples, X_train, y_train, X_val, y_val)</span>
-<span class="c1">#        print(i)</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">samples</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="n">samples_1</span><span class="p">,</span> <span class="n">samples_10</span><span class="p">,</span> <span class="n">samples_100</span><span class="p">]):</span>
+        <span class="n">results</span><span class="p">[</span><span class="n">clf_name</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">train_predict</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">samples</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">X_val</span><span class="p">,</span> <span class="n">y_val</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 
-<span class="n">train_predict</span><span class="p">(</span><span class="n">clf_A</span><span class="p">,</span> <span class="n">samples_1</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">X_val</span><span class="p">,</span> <span class="n">y_val</span><span class="p">)</span>
+<span class="c1">#train_predict(clf_A, samples_1, X_train, y_train, X_val, y_val)</span>
 <span class="c1"># 对选择的三个模型得到的评价结果进行可视化</span>
 <span class="c1">#vs.evaluate(results, accuracy, fscore)</span>
 <span class="c1">#sample_100</span>
@@ -12723,18 +12777,6 @@ Testing set has 9045 samples.
 <div class="output_wrapper">
 <div class="output">
 
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
-  &#39;precision&#39;, &#39;predicted&#39;, average, warn_for)
-</pre>
-</div>
-</div>
 
 <div class="output_area">
 
@@ -12766,66 +12808,66 @@ LogisticRegression trained on 28941 samples.
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[230]:</div>
+<div class="prompt output_prompt">Out[54]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;SVC&#39;: {0: {&#39;train_time&#39;: 0.01713275909423828,
-   &#39;pred_time&#39;: 0.17164206504821777,
-   &#39;acc_train&#39;: 0.79,
+<pre>{&#39;SVC&#39;: {0: {&#39;train_time&#39;: 0.02385711669921875,
+   &#39;pred_time&#39;: 0.17680788040161133,
+   &#39;acc_train&#39;: 0.7666666666666667,
    &#39;acc_val&#39;: 0.7522111663902709,
-   &#39;f_train&#39;: 0.0,
-   &#39;f_val&#39;: 0.0},
-  1: {&#39;train_time&#39;: 0.9672398567199707,
-   &#39;pred_time&#39;: 2.0891568660736084,
-   &#39;acc_train&#39;: 0.8733333333333333,
-   &#39;acc_val&#39;: 0.8247650635710337,
-   &#39;f_train&#39;: 0.720164609053498,
-   &#39;f_val&#39;: 0.6517794836008375},
-  2: {&#39;train_time&#39;: 78.62916207313538,
-   &#39;pred_time&#39;: 12.474190711975098,
-   &#39;acc_train&#39;: 0.87,
-   &#39;acc_val&#39;: 0.8313985627418463,
-   &#39;f_train&#39;: 0.7209302325581395,
-   &#39;f_val&#39;: 0.6693697538767962}},
- &#39;GaussianNB&#39;: {0: {&#39;train_time&#39;: 0.008424997329711914,
-   &#39;pred_time&#39;: 0.021888017654418945,
-   &#39;acc_train&#39;: 0.5,
-   &#39;acc_val&#39;: 0.44983416252072966,
-   &#39;f_train&#39;: 0.3442622950819672,
-   &#39;f_val&#39;: 0.3342157511581734},
-  1: {&#39;train_time&#39;: 0.014480829238891602,
-   &#39;pred_time&#39;: 0.019771337509155273,
-   &#39;acc_train&#39;: 0.41333333333333333,
-   &#39;acc_val&#39;: 0.41804864566058597,
-   &#39;f_train&#39;: 0.309126594700687,
-   &#39;f_val&#39;: 0.3399371444484226},
-  2: {&#39;train_time&#39;: 0.08746504783630371,
-   &#39;pred_time&#39;: 0.02240920066833496,
-   &#39;acc_train&#39;: 0.6166666666666667,
-   &#39;acc_val&#39;: 0.5866500829187397,
-   &#39;f_train&#39;: 0.40645161290322573,
-   &#39;f_val&#39;: 0.42021197193610993}},
- &#39;LogisticRegression&#39;: {0: {&#39;train_time&#39;: 0.0030319690704345703,
-   &#39;pred_time&#39;: 0.010357856750488281,
-   &#39;acc_train&#39;: 0.88,
-   &#39;acc_val&#39;: 0.802791597567717,
-   &#39;f_train&#39;: 0.7303370786516854,
-   &#39;f_val&#39;: 0.5974252380313799},
-  1: {&#39;train_time&#39;: 0.02117776870727539,
-   &#39;pred_time&#39;: 0.005759000778198242,
-   &#39;acc_train&#39;: 0.8666666666666667,
-   &#39;acc_val&#39;: 0.8388612493090105,
-   &#39;f_train&#39;: 0.6995884773662551,
-   &#39;f_val&#39;: 0.6808803301237966},
-  2: {&#39;train_time&#39;: 0.46129822731018066,
-   &#39;pred_time&#39;: 0.004439115524291992,
-   &#39;acc_train&#39;: 0.87,
-   &#39;acc_val&#39;: 0.853648424543947,
-   &#39;f_train&#39;: 0.7142857142857143,
-   &#39;f_val&#39;: 0.7181996086105675}}}</pre>
+   &#39;f_train&#39;: 0.8041958041958043,
+   &#39;f_val&#39;: 0.791432808910344},
+  1: {&#39;train_time&#39;: 0.703697919845581,
+   &#39;pred_time&#39;: 1.226133108139038,
+   &#39;acc_train&#39;: 0.8433333333333334,
+   &#39;acc_val&#39;: 0.8240740740740741,
+   &#39;f_train&#39;: 0.8776167471819646,
+   &#39;f_val&#39;: 0.8611587477722855},
+  2: {&#39;train_time&#39;: 72.57802104949951,
+   &#39;pred_time&#39;: 10.544497966766357,
+   &#39;acc_train&#39;: 0.84,
+   &#39;acc_val&#39;: 0.8305693753454948,
+   &#39;f_train&#39;: 0.8830845771144278,
+   &#39;f_val&#39;: 0.8686823874688597}},
+ &#39;GaussianNB&#39;: {0: {&#39;train_time&#39;: 0.0021491050720214844,
+   &#39;pred_time&#39;: 0.019267797470092773,
+   &#39;acc_train&#39;: 0.5866666666666667,
+   &#39;acc_val&#39;: 0.5708955223880597,
+   &#39;f_train&#39;: 0.8103975535168195,
+   &#39;f_val&#39;: 0.7760059336176526},
+  1: {&#39;train_time&#39;: 0.010223865509033203,
+   &#39;pred_time&#39;: 0.016783952713012695,
+   &#39;acc_train&#39;: 0.31666666666666665,
+   &#39;acc_val&#39;: 0.35088446655610833,
+   &#39;f_train&#39;: 0.3901734104046242,
+   &#39;f_val&#39;: 0.4513614280872218},
+  2: {&#39;train_time&#39;: 0.08743000030517578,
+   &#39;pred_time&#39;: 0.017620086669921875,
+   &#39;acc_train&#39;: 0.6766666666666666,
+   &#39;acc_val&#39;: 0.6963792150359315,
+   &#39;f_train&#39;: 0.8627204030226702,
+   &#39;f_val&#39;: 0.8641599431674024}},
+ &#39;LogisticRegression&#39;: {0: {&#39;train_time&#39;: 0.002270936965942383,
+   &#39;pred_time&#39;: 0.004523038864135742,
+   &#39;acc_train&#39;: 0.9,
+   &#39;acc_val&#39;: 0.810392482034273,
+   &#39;f_train&#39;: 0.9243697478991595,
+   &#39;f_val&#39;: 0.8592966561775994},
+  1: {&#39;train_time&#39;: 0.01253509521484375,
+   &#39;pred_time&#39;: 0.0040051937103271484,
+   &#39;acc_train&#39;: 0.85,
+   &#39;acc_val&#39;: 0.8376174682144831,
+   &#39;f_train&#39;: 0.8901830282861898,
+   &#39;f_val&#39;: 0.8772690986081705},
+  2: {&#39;train_time&#39;: 0.3101201057434082,
+   &#39;pred_time&#39;: 0.004060029983520508,
+   &#39;acc_train&#39;: 0.85,
+   &#39;acc_val&#39;: 0.849640685461581,
+   &#39;f_train&#39;: 0.8901830282861898,
+   &#39;f_val&#39;: 0.8865248226950356}}}</pre>
 </div>
 
 </div>
@@ -12882,7 +12924,7 @@ LogisticRegression trained on 28941 samples.
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>回答： </strong> 
-最终我们采用逻辑回归模型来预测判断一个人的收入情况。我们收集能影响收入的很多信息，比如年龄，受教育程度，受教育年限，种族和肤色等等。经过清洗转换编码后，数据集被划分为训练集和验证集。然后定义好模型，用训练数据集对模型进行训练。训练好了后模型就掌握了数据集的规律，于是我们进行训练集和验证集的预测，观察预测结果和真实结果的对比情况，包括准确性，来评估模型的优劣性。通过上述阶段，我们就能根据一个人的年龄，受教育年限，企业类型，肤色，周工作时长，国籍等信息判断出他的收入是否大于50000$一年。</p>
+最终我们采用逻辑回归模型来预测判断一个人的收入情况。逻辑回归模型不仅仅是预测出类别，而是可得到作出这个预测的概率。为了实现这个模型，我们需要收集能影响收入的很多信息，作为模型的特征值，比如年龄，受教育程度，受教育年限，种族和肤色等等，这些值要经过清洗转换编码。特征值有权重之分，在这里我们统一给相同的权重值1。要使模型得到最优化解，我们用一个损失函数来预测作出判断的错误程度，算法就是要使这个函数值达到最小值。我们采用梯度下降法来求得这个最小值，它每一步都能找到一个损失函数下降最快的方向，一步步能让损失函数变小的一种解法。求出损失函数后，定义好模型，用训练数据集对模型进行训练。训练好了后模型就掌握了数据集的规律，于是我们进行训练集和验证集的预测，观察预测结果和真实结果的对比情况，包括准确性，来评估模型的优劣性。通过上述阶段，我们就能根据一个人的年龄，受教育年限，企业类型，肤色，周工作时长，国籍等信息判断出他的收入是否大于50000$一年。</p>
 
 </div>
 </div>
@@ -12914,7 +12956,7 @@ LogisticRegression trained on 28941 samples.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[259]:</div>
+<div class="prompt input_prompt">In&nbsp;[55]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TODO：导入&#39;GridSearchCV&#39;, &#39;make_scorer&#39;和其他一些需要的库</span>
@@ -12923,7 +12965,7 @@ LogisticRegression trained on 28941 samples.
 <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="k">import</span> <span class="n">GridSearchCV</span>
 
 <span class="c1"># TODO：初始化分类器</span>
-<span class="n">clf</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">43</span><span class="p">)</span>
 
 <span class="c1"># TODO：创建你希望调节的参数列表</span>
 <span class="n">parameters</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;solver&#39;</span><span class="p">:[</span><span class="s1">&#39;newton-cg&#39;</span><span class="p">,</span><span class="s1">&#39;sag&#39;</span><span class="p">,</span><span class="s1">&#39;lbfgs&#39;</span><span class="p">],</span><span class="s1">&#39;multi_class&#39;</span><span class="p">:[</span><span class="s1">&#39;ovr&#39;</span><span class="p">,</span><span class="s1">&#39;multinomial&#39;</span><span class="p">],</span><span class="s1">&#39;penalty&#39;</span><span class="p">:[</span><span class="s1">&#39;l2&#39;</span><span class="p">]}</span>
@@ -12975,18 +13017,18 @@ LogisticRegression trained on 28941 samples.
 ------
 LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
           intercept_scaling=1, max_iter=100, multi_class=&#39;multinomial&#39;,
-          n_jobs=1, penalty=&#39;l2&#39;, random_state=None, solver=&#39;lbfgs&#39;,
+          n_jobs=1, penalty=&#39;l2&#39;, random_state=43, solver=&#39;lbfgs&#39;,
           tol=0.0001, verbose=0, warm_start=False)
 
 Unoptimized model
 ------
-Accuracy score on validation data: 0.8536
-F-score on validation data: 0.7182
+Accuracy score on validation data: 0.8496
+F-score on validation data: 0.8865
 
 Optimized Model
 ------
-Final accuracy score on the validation data: 0.8543
-Final F-score on the validation data: 0.7193
+Final accuracy score on the validation data: 0.8517
+Final F-score on the validation data: 0.8880
 </pre>
 </div>
 </div>
@@ -13019,13 +13061,13 @@ Final F-score on the validation data: 0.7193
 <tbody>
 <tr>
 <td style="text-align:center">准确率</td>
-<td style="text-align:center">0.8536</td>
-<td style="text-align:center">0.8543</td>
+<td style="text-align:center">0.8496</td>
+<td style="text-align:center">0.8517</td>
 </tr>
 <tr>
 <td style="text-align:center">F-score</td>
-<td style="text-align:center">0.7182</td>
-<td style="text-align:center">0.7193</td>
+<td style="text-align:center">0.8865</td>
+<td style="text-align:center">0.8880</td>
 </tr>
 </tbody>
 </table>
